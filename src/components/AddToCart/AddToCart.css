@@ -1,0 +1,26 @@
+.btn {
+    border-radius: 0px;
+    font-family: 'Pretendo', sans-serif;
+    font-size: 10px;
+    
+    ;
+}
+
+.btn-secondary {
+    border-radius: 0px;
+}
+
+.modal-content {
+    border-radius: 0px;
+}
+
+.modal-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.modal-body {
+    font-family: 'Pretendo', sans-serif;
+
+}

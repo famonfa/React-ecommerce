@@ -5,7 +5,7 @@
 .main-container {
     display: flex;
     width: 100%;
-   
+    font-family: 'Pretendo', sans-serif;
     justify-content: center;
     background-image: url(./back.png);
     background-blend-mode: exclusion;

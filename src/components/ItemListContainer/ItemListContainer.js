@@ -1,7 +1,13 @@
+
+import ItemCount from '../ItemCount/ItemCount'
+
+
 let ItemListContainer = () => {
+   
     return(
         <>
-        <h2>ACA IRA LA LISTA DE ITEMS</h2>
+            <ItemCount />
+
         </>
     )
 }  
