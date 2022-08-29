@@ -7,7 +7,7 @@ import './ItemCount.css'
 let ItemCount = () => {
     let stock = 5
     
-    const [count, setCount] = useState(4)
+    const [count, setCount] = useState(0)
     
 
     function incrementCount() {

@@ -1,13 +1,16 @@
 
-import ItemCount from '../ItemCount/ItemCount'
+import '../ItemList/ItemList.css'
+import ItemList from '../ItemList/ItemList'
 
 
 let ItemListContainer = () => {
    
+   
     return(
-        <>
-            <ItemCount />
-
+        <>  
+            <div className="wrapper">
+          <ItemList />
+            </div>
         </>
     )
 }  

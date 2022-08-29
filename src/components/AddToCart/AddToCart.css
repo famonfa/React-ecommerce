@@ -1,13 +1,14 @@
 .btn {
+    width: 8em;
     border-radius: 0px;
-    font-family: 'Pretendo', sans-serif;
     font-size: 10px;
+    margin-bottom: 1em;
     
-    ;
 }
 
 .btn-secondary {
     border-radius: 0px;
+   
 }
 
 .modal-content {
@@ -24,3 +25,4 @@
     font-family: 'Pretendo', sans-serif;
 
 }
+

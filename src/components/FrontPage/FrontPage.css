@@ -1,3 +1,5 @@
+
+
 .toad {
     width: 8em;
 }
@@ -5,7 +7,9 @@
 .main-container {
     display: flex;
     width: 100%;
-    font-family: 'Pretendo', sans-serif;
+    height: 200px;
+   
+
     justify-content: center;
     background-image: url(./back.png);
     background-blend-mode: exclusion;
@@ -16,4 +20,5 @@
 
 .title {
     margin-top: 2em;
+    font-family: 'Pretendo', sans-serif;
 }

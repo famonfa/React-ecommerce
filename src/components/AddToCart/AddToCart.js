@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
 import './AddToCart.css'
 
-
-function AddtoCart({setCount}) {
+function AddtoCart(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -23,7 +21,7 @@ function AddtoCart({setCount}) {
        
         <div className='modal-body'>
             <div className='modal-flex'>
-            <p>'You added some item to cart!'</p>
+            <p>{`You added ${props.game} to cart!`}</p>
             <img className='toad' src={require('./charizard.png')} alt='toad-intro'></img>
             </div>
         </div>
