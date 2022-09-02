@@ -1,7 +1,8 @@
 import NavBarN from "./components/NavBar/NavBar";
 import './App.css'
 import FrontPage from "./components/FrontPage/FrontPage";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+
 
 
 
@@ -10,7 +11,8 @@ function App() {
   <div>
     <NavBarN />
     <FrontPage />
-    <ItemListContainer />
+    {/* <ItemListContainer /> */}
+    <ItemDetailContainer/>
    
     
       </div>  

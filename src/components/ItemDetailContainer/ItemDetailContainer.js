@@ -1,10 +1,13 @@
-import ThePromise from "../../utils/ThePromise"
-import { useEffect, useState } from "react"
-import '../ItemList/ItemList.css'
-import { data } from "../../utils/data";
-import ItemRender from "../Item/ItemRender";
 
-const ItemList = () => {
+import ItemDetail from '../ItemDetail/ItemDetail'
+import {useEffect, useState} from 'react'
+import ThePromise from '../../utils/ThePromise';
+import { data } from '../../utils/data';
+
+
+
+let ItemDetailContainer = () => {
+    
         const [products, setProducts] = useState([]);
     
         useEffect(() => {
@@ -15,13 +18,14 @@ const ItemList = () => {
             .catch(err => console.log(err))
         })
 
-        
-    
+   
+   
     return (
         <>
         {
-            products.map(item => (
-            <ItemRender 
+            products.slice(0,1).map(item => (
+                
+            <ItemDetail
             id={item.id}
             game={item.game}
             console={item.console}
@@ -29,14 +33,15 @@ const ItemList = () => {
             price={item.price}
             thumbnail={item.thumbnail}
             description={item.description}
+            condition={item.condition}
+            
                 />
 
             ))
           }  
           </>
           )
-        }
-        
-export default ItemList;
+}  
 
+export default ItemDetailContainer
 

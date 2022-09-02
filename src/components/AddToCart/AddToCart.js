@@ -8,20 +8,17 @@ function AddtoCart(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
-  
-
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <button className='button-add'  onClick={handleShow}>
         Add to cart
-      </Button>
+      </button>
 
       <Modal show={show} onHide={handleClose} animation={false}>
        
         <div className='modal-body'>
             <div className='modal-flex'>
-            <p>{`You added ${props.game} to cart!`}</p>
+            <p>{`You added ${props.name} to cart!`}</p>
             <img className='toad' src={require('./charizard.png')} alt='toad-intro'></img>
             </div>
         </div>

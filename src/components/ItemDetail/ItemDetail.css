@@ -1,0 +1,54 @@
+.wrapper {
+    width: 100%;
+   
+    padding-top: 5em;
+
+}
+
+.det-card {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.det-img {
+    width: 15em;
+    margin-right: 2.5em;
+}
+
+.det-info {
+    margin-left: 2.5em;
+}
+
+.btns {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+.bttn {
+    padding: 1em;
+    width: 8em;
+    border-radius: 0px;
+    font-size: 10px;
+    margin-bottom: 1em;
+    background-color: blue;
+    border: 1px solid blue ;
+    margin: 1em;
+    color: white;
+    font-size: 0.8rem;
+    
+}
+
+.info-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.info-btns {
+    width: 60%;
+    background-color: rgba(255, 0, 0, 0.5);
+    padding-top: 1.5em;
+    padding: 2em;
+}
