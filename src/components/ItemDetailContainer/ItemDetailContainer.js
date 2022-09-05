@@ -8,12 +8,11 @@ import { data } from '../../utils/data';
 
 let ItemDetailContainer = () => {
     
-        const [products, setProducts] = useState([]);
+        const [products, setProducts] = useState({});
     
         useEffect(() => {
        
-    
-       ThePromise(data)
+       ThePromise(data[0])
             .then(result => setProducts(result))
             .catch(err => console.log(err))
         })
@@ -22,26 +21,11 @@ let ItemDetailContainer = () => {
    
     return (
         <>
-        {
-            products.slice(0,1).map(item => (
-                
-            <ItemDetail
-            id={item.id}
-            game={item.game}
-            console={item.console}
-            stock={item.stock}
-            price={item.price}
-            thumbnail={item.thumbnail}
-            description={item.description}
-            condition={item.condition}
-            
-                />
-
-            ))
+            <ItemDetail {...products} />
+        </>
+        )
           }  
-          </>
-          )
-}  
-
+         
+        
 export default ItemDetailContainer
 

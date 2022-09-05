@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import '../ItemList/ItemList.css'
 import { data } from "../../utils/data";
 import ItemRender from "../Item/ItemRender";
+import { Link } from "react-router-dom";
 
 const ItemList = () => {
         const [products, setProducts] = useState([]);
@@ -21,8 +22,10 @@ const ItemList = () => {
         <>
         {
             products.map(item => (
+            <Link>
             <ItemRender 
-            id={item.id}
+        
+            key={item.id}
             game={item.game}
             console={item.console}
             stock={item.stock}
@@ -30,6 +33,7 @@ const ItemList = () => {
             thumbnail={item.thumbnail}
             description={item.description}
                 />
+                </Link>
 
             ))
           }  
