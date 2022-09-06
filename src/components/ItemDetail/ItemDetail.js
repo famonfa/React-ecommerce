@@ -12,6 +12,7 @@ import { useState } from "react";
     return(
    
   <>     
+           <section>
            <div className="wrapper" >
            <div className="det-card">
            <img className="det-img" src={thumbnail} alt="Same alt value" />
@@ -20,7 +21,7 @@ import { useState } from "react";
            <h4 className="det-console">{console}</h4>
            <p>${price}</p>
            <h6>Free Shipping Available.-</h6>
-           <h7>Condition: {condition}</h7>
+           <h6>Condition: {condition}</h6>
            <div>
            <ItemCount />
            </div>
@@ -34,6 +35,7 @@ import { useState } from "react";
            <p className="info-btns">{btns}</p>
            </div>
            </div>
+           </section>
        </>
     );
     }

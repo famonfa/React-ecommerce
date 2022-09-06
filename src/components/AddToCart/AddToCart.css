@@ -29,7 +29,8 @@
     background-color: blue;
     border: 1px solid blue ;
     margin: 1em;
-    color: white;
+    color: white !important;
+    
     font-size: 0.8rem;
     
 }

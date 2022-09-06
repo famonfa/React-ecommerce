@@ -9,7 +9,7 @@
 }
 
 .buys {
-    color: red;
+    color: red !important;
     position: absolute;
     width: 150px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

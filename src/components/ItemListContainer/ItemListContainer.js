@@ -1,12 +1,12 @@
 
-import '../ItemList/ItemList.css'
+import '../Item/ItemRender.css'
 import ItemList from '../ItemList/ItemList'
 
 
 let ItemListContainer = () => {
    
    
-    return(
+    return( 
         <>  
             <div className="wrapper">
           <ItemList />

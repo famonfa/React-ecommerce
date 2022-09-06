@@ -1,20 +1,26 @@
 import ThePromise from "../../utils/ThePromise"
 import { useEffect, useState } from "react"
-import '../ItemList/ItemList.css'
 import { data } from "../../utils/data";
 import ItemRender from "../Item/ItemRender";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const ItemList = () => {
         const [products, setProducts] = useState([]);
-    
+        const { id } = useParams();
+
+        
+        
         useEffect(() => {
-       
-    
-       ThePromise(data)
+        if (id) {
+       ThePromise(data.filter(item => item.categoryId == id))
             .then(result => setProducts(result))
             .catch(err => console.log(err))
-        })
+        }else {
+            ThePromise(data)
+            .then(result => setProducts(result))
+            .catch(err => console.log(err))
+        }
+        },[id])
 
         
     
@@ -22,10 +28,11 @@ const ItemList = () => {
         <>
         {
             products.map(item => (
-            <Link>
+            
             <ItemRender 
         
             key={item.id}
+            id={item.id}
             game={item.game}
             console={item.console}
             stock={item.stock}
@@ -33,7 +40,7 @@ const ItemList = () => {
             thumbnail={item.thumbnail}
             description={item.description}
                 />
-                </Link>
+               
 
             ))
           }  
