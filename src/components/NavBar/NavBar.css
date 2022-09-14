@@ -5,10 +5,15 @@
 .logo {
     width: 3em;
     margin-top: 0.5em;
+    margin-left: 0.5em;
+    
 }
 .logo-uno {
     width: 2.4em;
     margin-top: 0.5em;
+    margin: 0.3em;
+    
+    
 }
 
 .navbar {

@@ -16,3 +16,32 @@
     border: 1px solid red;
 
 }
+
+ 
+    .button-add {
+        padding: 1em;
+        width: 8em;
+        border-radius: 0px;
+        font-size: 10px;
+        margin-bottom: 1em;
+        background-color: blue;
+        border: 1px solid blue ;
+        margin: 1em;
+        color: white !important; 
+        font-size: 0.8rem;  
+    }
+
+    .button-cart {
+        padding: 1em;
+        width: 8em;
+        border-radius: 0px;
+        font-size: 10px;
+        margin-bottom: 1em;
+        background-color: red;
+        border: 3px solid blue ;
+        margin: 1em;
+        color: white !important; 
+        font-size: 0.8rem;  
+
+    }
+ 

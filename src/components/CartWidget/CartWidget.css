@@ -6,6 +6,7 @@
 
 .cart-widget {
     display: flex;
+    margin-left: 2em;
 }
 
 .buys {
@@ -15,6 +16,7 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     bottom: 0;
+    
     
     
    
