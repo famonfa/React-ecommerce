@@ -1,0 +1,86 @@
+
+
+.wrapper-cart {
+    padding: 1em;
+    margin-left: 5em;
+    margin-right: 5em;
+    
+   
+}
+
+.cart-titles {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    border-bottom: 1px solid red;
+    width: 100%;
+    
+}
+
+.cart-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    padding: 0.5em;
+   margin: 1em;
+   position: relative
+  
+}
+
+.cart-img {
+    width: 8em;
+}
+
+.info-cart {
+    display: flex;
+    align-items: center;
+}
+
+.titles-game {
+    margin-left: 1em;
+    width: 700%;
+}
+
+.remove {
+   
+    font-size: 2rem;
+    margin-right: 0.2em;
+
+}
+
+.button-cart {
+    
+    background-color: red;
+    margin: 0.5em;
+    border: 3px solid blue;
+    color: black;
+
+}
+
+.cart-button-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.empty-cart-wrapper {
+    display: flex;
+    width: 100%;
+    padding: 5em;
+    justify-content: center;
+    align-items:center;
+
+}
+
+.empty-cart {
+    
+    padding: 2em;
+    color: blue !important;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}

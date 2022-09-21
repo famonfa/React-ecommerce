@@ -21,9 +21,9 @@ function NavBar() {
             <Link to="/category/1" ><img className='logo-uno' src={require('./color.png')} alt='game boy color'></img></Link>
             <Link to="/category/2" ><img className='logo' src={require('./advance.png')} alt='game boy advance'></img> </Link>
             <Link to="/category/3" ><img className='logo' src={require('./ds.png')} alt='nintendo ds'></img> </Link>
-            {/* <SearchBar /> */}
+           
           </Nav>
-          <CartWidget />
+          <Link to='/cart'><CartWidget /></Link>
          
 
         </Navbar.Collapse>

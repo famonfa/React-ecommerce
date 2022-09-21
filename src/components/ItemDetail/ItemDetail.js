@@ -1,14 +1,16 @@
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../CartContext/CartContext";
 
 
 
-  const ItemDetail = ({thumbnail, game, console, condition, price, description, stock}) => {
+  const ItemDetail = ({thumbnail, game, console, condition, price, description, stock, id }) => {
     
     const [btns, setBtns] = useState('')
     const [itemCount, setItemCount] = useState(0)
+    const ctx = useContext(CartContext)
     
 
     
@@ -18,7 +20,12 @@ import { useState } from "react";
     const onAdd = (qty) => {
       setItemCount(qty)
       alert(`You added ${qty} cartridges of ${game} games to cart!`)
-    }
+      const itemObj = {
+        id, game, thumbnail, price, console, condition, qty}
+        ctx.addItem(itemObj)
+      }
+      
+    
     
     return(
    
