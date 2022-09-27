@@ -32,13 +32,13 @@ const Cart = () => {
                 </div>
               </div>
               <h5>{item.qtyItem} Units</h5>
-              <h5>${item.priceItem}</h5>
-              <h5>${ctx.subTotal(item.qtyItem, item.priceItem)}</h5>
+              <h5>${item.priceItem.toFixed(2)}</h5>
+              <h5>${ctx.subTotal(item.qtyItem, item.priceItem).toFixed(2)}</h5>
               <span className='remove' onClick={() => ctx.removeItem(item.idItem)}>X</span>
             </div>
           )
       }
-      <h5 className='total'>Total ${ctx.totalOrder()}</h5>
+      <h5 className='total'>Total ${ctx.totalOrder().toFixed()}</h5>
       <div className='cart-button-wrapper'>
         <Link to='/'><button className='button-cart'>Continue shopping</button></Link>
         <button className='button-cart' onClick={ctx.clear}>Remove all items</button>

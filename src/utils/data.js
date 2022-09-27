@@ -46,7 +46,7 @@ const data = [
       },
      {
     id: 5,  
-    game: "Super Mario Advance 4 - Super Mario Bros 3",
+    game: "Super Mario Advance 4",
     console: "Game Boy Advance",
     stock: 5,
     price: 44.99,
@@ -59,7 +59,7 @@ const data = [
      {
     id: 6,  
     game: "Legend Of Zelda - Phantom Hourglass",
-    console: "Nitendo DS",
+    console: "Nintendo DS",
     stock: 5,
     price: 56.99,
     thumbnail: "https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/320w/products/26847/17895/Game-DS-ZeldaPH-2__34367.1662045273.jpg?c=2",
@@ -142,13 +142,13 @@ const data = [
 
        {
     id: 13,  
-    game: "Mario Kart - Super Circuit",
+    game: "DBZ - Legacy of Goku",
     console: "Game Boy Advance",
     stock: 5,
     price: 44.99,
-    thumbnail: "https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/320w/products/27619/35809/s-l1000_5__55605.1662152023.jpg?c=2",
-    description: "Mario Kart Super Circuit - Game Boy Advance Game only. Great condition. All DK's classic used games are cleaned, tested, 100% authentic, guaranteed to work, and backed by a 120 day warranty.", 
+    thumbnail: "https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/320w/products/27517/18601/Game-GBAdvance-DBZLegofGoku-2__41365.1662734476.jpg?c=2", 
     condition: 'used',
+    description: "DragonBall Z Legacy Of Goku - Game Boy Advance Game GBA . Game only. Great condition.", 
     categoryId: 2,
       },
 

@@ -49,7 +49,7 @@ return total
 const totalOrder = () => {
     let acc = 0
     cartList.map(item => {
-        acc += parseFloat(item.qtyItem).toFixed(2) * parseFloat(item.priceItem).toFixed(2)
+       acc += parseFloat(item.qtyItem).toFixed() * parseFloat(item.priceItem).toFixed()
     } )
     return acc
 }
