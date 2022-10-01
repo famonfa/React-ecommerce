@@ -10,28 +10,16 @@ const ItemList = () => {
     const [products, setProducts] = useState([]);
     const { idCategory } = useParams();
 
-
-    //  Render Items por medio de una promesa de un array hardcodeado.
-    //  filter para las distintas categorías del navBar.
-    //     useEffect(() => {
-    //     if (id) {
-    //    ThePromise(data.filter(item => item.categoryId == id))
-    //         .then(result => setProducts(result))
-    //         .catch(err => console.log(err))
-    //     }else {
-    //         ThePromise(data)
-    //         .then(result => setProducts(result))
-    //         .catch(err => console.log(err)) 
-    //     }
-    //     },[id])
-
-    
-
     useEffect(() => {
         firestoreFetch(idCategory)
-            .then((result) => setProducts(result))
-    })
+            .then(result => setProducts(result))
+    },[idCategory])
 
+    useEffect(() => {
+        return (() => {
+            setProducts([])
+        })
+    },[])
 
     return (
         <>
@@ -48,6 +36,7 @@ const ItemList = () => {
                         price={item.price}
                         thumbnail={item.thumbnail}
                         description={item.description}
+                        categoryId={item.categoryId}
                     />
 
 

@@ -19,23 +19,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
 
-export const firestoreFetch = async (idCategory) => {
-
+export const firestoreFetch = async (category) => {
   let q;
-  
-  if(idCategory) {
-    q = query(collection(db, "products"), where('categoryId', '==', idCategory));
+  if (category) {
+    q = query(collection(db, "products"), where('categoryId', '==', category));
 
-
-  }else{
-      q = query(collection(db, "products"));
+  } else {
+    q = query(collection(db, "products"));
   }
-  console.log(idCategory);
+
   const querySnapshot = await getDocs(q);
   const dataFromFirestore = querySnapshot.docs.map(doc => ({
     id: doc.id,
     ...doc.data()
   }))
+  console.log(dataFromFirestore);
   return dataFromFirestore
 
   // querySnapshot.forEach((doc) => {
