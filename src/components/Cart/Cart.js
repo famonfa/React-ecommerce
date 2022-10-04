@@ -1,11 +1,55 @@
+import { doc, setDoc, serverTimestamp, collection, increment, updateDoc } from 'firebase/firestore'
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../CartContext/CartContext'
 import './Cart.css'
+import { db } from '../../utils/firebaseConfig'
 
 const Cart = () => {
 
   const ctx = useContext(CartContext)
+
+  const createOrder = () => {
+    let checkoutItems = ctx.cartList.map(item => ({
+      id: item.idItem,
+      title: item.gameItem,
+      price: item.priceItem,
+      qty: item.qtyItem,
+    }))
+
+    let order = {
+      buyer: {
+        name: 'Juan',
+        email: 'juan@gmail.com',
+        phone: '1131224987'
+      },
+      date: serverTimestamp(),
+      items: checkoutItems,
+      total: ctx.totalOrder()
+    }
+    console.log(order);
+
+    const createOrderInFirestore = async () => {
+      const newOrderRef = doc(collection(db, "orders"))
+      await setDoc(newOrderRef, order);
+      return newOrderRef
+    }
+
+    createOrderInFirestore()
+      .then(result => alert('Your order has been created ' + result.id)) //el result.id es el id de compra
+      .catch(err => console.log(err))
+
+    ctx.cartList.forEach(async (item) => {
+      const itemRef = doc(db, "products", item.idItem);
+      await updateDoc(itemRef, {
+        stock: increment(-item.qtyItem)
+      });
+    })
+
+
+    ctx.clear()
+  }
+
 
   return (
     <div className='wrapper-cart'>
@@ -17,8 +61,8 @@ const Cart = () => {
       {
         ctx.cartList.length === 0
           ?
-          <div className='empty-cart-wrapper'> 
-          <h1 className='empty-cart'>Your cart is empty</h1>
+          <div className='empty-cart-wrapper'>
+            <h1 className='empty-cart'>Your cart is empty</h1>
           </div>
           :
           ctx.cartList.map(item =>
@@ -38,7 +82,10 @@ const Cart = () => {
             </div>
           )
       }
-      <h5 className='total'>Total ${ctx.totalOrder().toFixed()}</h5>
+      <div className='finish'>
+        <h5 className='total'>Total ${ctx.totalOrder().toFixed()}</h5>
+        <button className='button-cart' onClick={createOrder}>Checkout</button>
+      </div>
       <div className='cart-button-wrapper'>
         <Link to='/'><button className='button-cart'>Continue shopping</button></Link>
         <button className='button-cart' onClick={ctx.clear}>Remove all items</button>

@@ -1,9 +1,11 @@
 
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useEffect, useState} from 'react'
-import ThePromise from '../../utils/ThePromise';
-import { data } from '../../utils/data';
+// import ThePromise from '../../utils/ThePromise';
+// import { data } from '../../utils/data';
 import { useParams } from 'react-router-dom';
+import { itemPetition } from '../../utils/firebaseConfig';
+
 
 
 
@@ -14,8 +16,10 @@ let ItemDetailContainer = () => {
     
         useEffect(() => {
        
-       ThePromise(data.find(item => item.id == id))
-            .then(result => setProducts(result))
+      itemPetition(id)
+            .then(result => {
+                console.log('result' + result);
+                setProducts(result)})
             .catch(err => console.log(err))
         }, [])
 

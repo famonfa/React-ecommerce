@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, query } from "firebase/firestore";
-import { collection, getDocs, where } from "firebase/firestore";
+import { collection, getDocs,getDoc,  where, doc } from "firebase/firestore";
 
 
 
@@ -19,16 +19,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
 
-export const firestoreFetch = async (category) => {
+export const firestoreFetch = async (categoryId) => {
   let q;
-  if (category) {
-    q = query(collection(db, "products"), where('categoryId', '==', category));
+  if (categoryId) {
+    q = query(collection(db, "products"), where('categoryId', '==', categoryId));
 
   } else {
     q = query(collection(db, "products"));
   }
 
   const querySnapshot = await getDocs(q);
+  console.log(querySnapshot);
   const dataFromFirestore = querySnapshot.docs.map(doc => ({
     id: doc.id,
     ...doc.data()
@@ -41,3 +42,24 @@ export const firestoreFetch = async (category) => {
   // });
 
 }
+
+export const itemPetition = async (id) => {
+ 
+  const docRef = doc(db, "products", id);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+    
+    return { id: docSnap.id,
+      ...docSnap.data()
+    }
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+
+  
+}
+
+

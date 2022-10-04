@@ -13,6 +13,7 @@ import { CartContext } from "../CartContext/CartContext";
     const ctx = useContext(CartContext)
     
 
+
     
     
     const shipping = 'All orders are processed and packed at our warehouse and by our valued certified team members. We take great pride and care with your orders and want nothing more, than for you to get your orders safely and on time and for you to be playing your video games. We ship worldwide and 99% of all paid shipping orders ship out within 1 business day.'
@@ -25,7 +26,14 @@ import { CartContext } from "../CartContext/CartContext";
         ctx.addItem(itemObj)
       }
       
-    
+      const remainingStock = () => {
+        let cartItem = ctx.findCartItem(id) 
+        return stock - (cartItem ? cartItem.qtyItem : 0 )
+
+      }
+       
+
+  
     
     return(
    
@@ -43,7 +51,7 @@ import { CartContext } from "../CartContext/CartContext";
            <div>
             {
                 itemCount === 0
-                ? <ItemCount stock={stock}  onAdd={onAdd}  />
+                ? <ItemCount stock={remainingStock()}  onAdd={onAdd}  />
                 : <Link to='/cart'><button className="button-cart">Checkout</button></Link>
             }
            </div>
@@ -54,7 +62,7 @@ import { CartContext } from "../CartContext/CartContext";
             <button className="bttn" onClick={() => setBtns(shipping)}>Shipping</button>
            </div>
            <div className="info-container">
-           <p className="info-btns">{btns}</p>
+            {btns && (<p className="info-btns">{btns}</p>)}
            </div>
            </div>
            </section>

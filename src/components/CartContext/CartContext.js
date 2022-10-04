@@ -2,29 +2,38 @@ import {  createContext, useState } from "react";
 
 export const CartContext = createContext();
 
+const arrayListaCart = (cartList, item) => {
+    return (
+    [
+        ...cartList,
+        {idItem: item.id,
+        imgItem: item.thumbnail,
+        gameItem: item.game,
+        priceItem: item.price,
+        conditionItem: item.condition,
+        consoleItem: item.console,
+        qtyItem: item.qty
+        } 
+    ])
+}
 
 
 
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
-    console.log(cartList);
+    console.log('cart' + JSON.stringify(cartList));
 
     const addItem = (item) => {
+        console.log(JSON.stringify(item) );
         let found = cartList.find(product => product.idItem === item.id)
-        console.log(found);
+        console.log(JSON.stringify(found));
         if (found === undefined) {
 
-            setCartList([
-                ...cartList,
-                {idItem: item.id,
-                imgItem: item.thumbnail,
-                gameItem: item.game,
-                priceItem: item.price,
-                conditionItem: item.condition,
-                consoleItem: item.console,
-                qtyItem: item.qty
-                } 
-            ])
+            let variable = arrayListaCart(cartList, item)
+            setCartList(
+                variable  
+            )
+            console.log('variable ' + JSON.stringify(variable));
         }else {
             found.qtyItem += item.qty
         }
@@ -64,9 +73,14 @@ const clear = () => {
     setCartList([])
 }
 
+const findCartItem = (idItem) => {
+    let finded = cartList.find(item => item.idItem === idItem)
+    return finded
+}
+
   return (
   
-    <CartContext.Provider value={{cartList, addItem, removeItem, clear, qtyOnWidget,subTotal, totalOrder}}>
+    <CartContext.Provider value={{cartList, addItem, removeItem, clear, qtyOnWidget,subTotal, totalOrder, findCartItem}}>
         {children}
     </CartContext.Provider>
   );

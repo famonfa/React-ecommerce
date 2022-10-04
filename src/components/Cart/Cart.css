@@ -79,8 +79,9 @@
     color: blue !important;
 }
 
-.total {
+.finish {
     display: flex;
-    justify-content: flex-end;
+    align-items: flex-end;
     width: 100%;
+    flex-direction: column;
 }
