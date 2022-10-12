@@ -36,3 +36,20 @@
     text-decoration: none !important;
     cursor:pointer;  
 }
+
+@media (max-width: 991px) {
+
+    .navbar-Collapse {
+        width: 100%;
+        justify-content: space-around;
+    }
+    .navbar-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    
+    }  
+  

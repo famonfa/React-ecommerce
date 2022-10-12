@@ -18,12 +18,14 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
+            <div>
             <Link to="/category/1" ><img className='logo-uno' src={require('./color.png')} alt='game boy color'></img></Link>
             <Link to="/category/2" ><img className='logo' src={require('./advance.png')} alt='game boy advance'></img> </Link>
             <Link to="/category/3" ><img className='logo' src={require('./ds.png')} alt='nintendo ds'></img> </Link>
-           
+            </div>
+            <Link to='/cart'><CartWidget /></Link>
+
           </Nav>
-          <Link to='/cart'><CartWidget /></Link>
          
 
         </Navbar.Collapse>

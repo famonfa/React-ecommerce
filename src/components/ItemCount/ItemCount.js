@@ -3,6 +3,8 @@ import './ItemCount.css'
 
 
 
+
+
 let ItemCount = ({stock=0, onAdd}) => {
     
   
@@ -21,9 +23,9 @@ let ItemCount = ({stock=0, onAdd}) => {
         if (count <= stock && count !== 0) {
             setCount(count-1)
             
-        }
+        }          
     }
-   
+
    
     return(
         <>
@@ -35,10 +37,10 @@ let ItemCount = ({stock=0, onAdd}) => {
             </div>
             <div>
             {
-            count?
-                <button className='button-add' onClick={() => onAdd(count)}>Add to cart</button>
-                :<button className='button-add' disabled onClick={() => onAdd(count)}>Add to cart</button>
-            }
+    count?
+        <button className='button-add' onClick={() => onAdd(count)}>Add to cart</button>
+        :<button className='button-add' disabled onClick={() => onAdd(count) }>Add to cart</button>
+    }     
             </div>    
             </div>
 

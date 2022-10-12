@@ -3,14 +3,21 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    
 }
 
+
+@media (max-width: 429px) {
+
+    .item-count {
+        flex-direction: column;
+    }
+
+    
+    }  
 
 
 .button {
     width: 1.7em;
-    
     background-color: red;
     margin: 0.5em;
     border: 1px solid red;
@@ -45,3 +52,14 @@
 
     }
  
+    @media (max-width: 991px) {
+
+        .button-cart {
+           
+            display: flex;
+            align-self: flex-end;
+        }
+    
+        
+        }  
+      

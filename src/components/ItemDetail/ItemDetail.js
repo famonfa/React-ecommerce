@@ -3,6 +3,10 @@ import './ItemDetail.css'
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CartContext } from "../CartContext/CartContext";
+import Swal from "sweetalert2";
+
+
+
 
 
 
@@ -14,23 +18,35 @@ import { CartContext } from "../CartContext/CartContext";
     
 
 
-    
+  
     
     const shipping = 'All orders are processed and packed at our warehouse and by our valued certified team members. We take great pride and care with your orders and want nothing more, than for you to get your orders safely and on time and for you to be playing your video games. We ship worldwide and 99% of all paid shipping orders ship out within 1 business day.'
     
     const onAdd = (qty) => {
       setItemCount(qty)
-      alert(`You added ${qty} cartridges of ${game} games to cart!`)
+     
+
+      Swal.fire({
+        text: `You added ${qty} cartridges of ${game} games to cart!`,
+        target: '#custom-target',
+        customClass: {
+          container: 'position-absolute'
+        },
+        toast: true,
+        position: 'center'
+      })
+      
       const itemObj = {
         id, game, thumbnail, price, console, condition, qty}
         ctx.addItem(itemObj)
       }
+     
       
-      const remainingStock = () => {
-        let cartItem = ctx.findCartItem(id) 
-        return stock - (cartItem ? cartItem.qtyItem : 0 )
+      function remainingStock() {
+      let cartItem = ctx.findCartItem(id);
+      return stock - (cartItem ? cartItem.qtyItem : 0);
 
-      }
+    }
        
 
   
