@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
            <h3 className="card-name"><Link to={`/item/${props.id}`}>{props.game}</Link></h3>
            <h4 className="card-console">{props.console}</h4>
            <div>
-           <p>${props.price}</p>
+           <p className="card-price">${props.price}</p>
            
            </div>
            </div>
