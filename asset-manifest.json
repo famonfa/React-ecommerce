@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/React/static/css/main.80ab7afb.css",
-    "main.js": "/React/static/js/main.7f3f9a5c.js",
-    "static/media/shop.jpg": "/React/static/media/shop.dd20af971c9fd3286a4f.jpg",
-    "static/media/snorlax.png": "/React/static/media/snorlax.583f3a1b6c4142b8dd1e.png",
-    "index.html": "/React/index.html",
-    "main.80ab7afb.css.map": "/React/static/css/main.80ab7afb.css.map",
-    "main.7f3f9a5c.js.map": "/React/static/js/main.7f3f9a5c.js.map"
+    "main.css": "/React-ecommerce/static/css/main.80ab7afb.css",
+    "main.js": "/React-ecommerce/static/js/main.ecb78d46.js",
+    "static/media/shop.jpg": "/React-ecommerce/static/media/shop.dd20af971c9fd3286a4f.jpg",
+    "static/media/snorlax.png": "/React-ecommerce/static/media/snorlax.583f3a1b6c4142b8dd1e.png",
+    "index.html": "/React-ecommerce/index.html",
+    "main.80ab7afb.css.map": "/React-ecommerce/static/css/main.80ab7afb.css.map",
+    "main.ecb78d46.js.map": "/React-ecommerce/static/js/main.ecb78d46.js.map"
   },
   "entrypoints": [
     "static/css/main.80ab7afb.css",
-    "static/js/main.7f3f9a5c.js"
+    "static/js/main.ecb78d46.js"
   ]
 }
