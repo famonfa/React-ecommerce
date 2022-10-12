@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.80ab7afb.css",
+    "main.js": "/static/js/main.c1dd0ad4.js",
+    "static/media/shop.jpg": "/static/media/shop.dd20af971c9fd3286a4f.jpg",
+    "static/media/snorlax.png": "/static/media/snorlax.583f3a1b6c4142b8dd1e.png",
+    "index.html": "/index.html",
+    "main.80ab7afb.css.map": "/static/css/main.80ab7afb.css.map",
+    "main.c1dd0ad4.js.map": "/static/js/main.c1dd0ad4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80ab7afb.css",
+    "static/js/main.c1dd0ad4.js"
+  ]
+}
